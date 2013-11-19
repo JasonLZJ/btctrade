@@ -32,7 +32,7 @@ def write_db(datas):
 
 def instance():
     # returns something like {"high":738.88,"low":689.10,"buy":713.50,"sell":717.30,"last":717.41,"vol":4797.32000000}
-    remote_file = urlopen('https://vip.btcchina.com/bc/ticker')
+    remote_file = urlopen(config['btcchina']['ticker_url'])
     remote_data = remote_file.read()
     remote_file.close()
     remote_data = json.loads(str(remote_data))['ticker']

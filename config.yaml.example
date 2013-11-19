@@ -5,6 +5,8 @@ database:
   databasename: "database name"
   encoding: utf8
 
-api_key:
-  access_key: "your access key"
-  secret_key: "your secret key"
+btcchina:
+  ticker_url: 'https://data.btcchina.com/data/ticker'
+  api_key:
+    access_key: "your access key"
+    secret_key: "your secret key"
