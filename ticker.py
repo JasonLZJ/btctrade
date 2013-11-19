@@ -14,7 +14,7 @@ def write_db(datas):
     try:
         conn_read = MySQLdb.connect(host='localhost',user='root',passwd='',db ='btcchina',charset='utf8')
         cur_write = conn_read.cursor()
-        sql =  "insert into ticker(high, low, buy, sell,last,vol) values( %s, %s, %s,%s,%s,%s)"
+        sql =  "insert into ticker(sell, buy, last, vol, high, low) values( %s, %s, %s,%s,%s,%s)"
         cur_write.execute(sql,datas)
 #{"ticker":{"high":"6989.00","low":"3998.00","buy":"5192.00","sell":"5200.00","last":"5200.00","vol":"91860.10300000"}}
         conn_read.commit()
