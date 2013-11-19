@@ -22,7 +22,7 @@ def write_db(datas):
         sql =  "insert into ticker(sell, buy, last, vol, high, low) values( %s, %s, %s,%s,%s,%s)"
         cur_write.execute(sql,datas)
 #{"ticker":{"high":"6989.00","low":"3998.00","buy":"5192.00","sell":"5200.00","last":"5200.00","vol":"91860.10300000"}}
-        conn_read.commit()
+        conn.commit()
         cur_write.close()
     except MySQLdb.Error,e:
         print "Mysql error %d : %s." % (e.args[0], e.args[1])
