@@ -1,0 +1,10 @@
+database:
+  host: localhost
+  username: "mysql user name"
+  password: "mysql password"
+  databasename: "database name"
+  encoding: utf8
+
+api_key:
+  access_key: "your access key"
+  secret_key: "your secret key"

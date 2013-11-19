@@ -9,11 +9,16 @@ import json
 from timeit import Timer
 import MySQLdb
 import time
+import yaml
+
+
+config = yaml.load(open('config.yaml'))
+
+conn = MySQLdb.connect(host=config['database']['host'],user=config['database']['username'],passwd=config['database']['password'],db =config['database']['databasename'],charset=config['database']['encoding'] )
 
 def write_db(datas):
     try:
-        conn_read = MySQLdb.connect(host='localhost',user='root',passwd='',db ='btcchina',charset='utf8')
-        cur_write = conn_read.cursor()
+        cur_write = conn.cursor()
         sql =  "insert into ticker(sell, buy, last, vol, high, low) values( %s, %s, %s,%s,%s,%s)"
         cur_write.execute(sql,datas)
 #{"ticker":{"high":"6989.00","low":"3998.00","buy":"5192.00","sell":"5200.00","last":"5200.00","vol":"91860.10300000"}}
